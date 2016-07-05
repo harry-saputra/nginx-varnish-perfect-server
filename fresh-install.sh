@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "Welcome to the installation.."
 sudo apt-get update -y
-sudo apt-get install htop nginx php7.0-cli php7.0-curl php7.0-dev php7.0-fpm php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-opcache php-mbstring php7.0-mbstring php7.0-sybase vsftpd freetds-common libsybdb5 php-gettext mariadb-server mariadb-client unzip varnish ufw -y
-sudo service php7.0-fpm restart
+sudo apt-get install htop nginx php5.6-cli php5.6-curl php5.6-dev php5.6-fpm php5.6-gd php5.6-mysql php5.6-mcrypt php5.6-opcache php-mbstring php5.6-mbstring php5.6-sybase vsftpd freetds-common libsybdb5 php-gettext mariadb-server mariadb-client unzip varnish ufw -y
+sudo service php5.6-fpm restart
 sudo service nginx restart
 sudo service varnish restart
 sudo rm /etc/nginx/sites-available/default
@@ -11,12 +11,12 @@ sudo rm /etc/nginx/nginx.conf
 sudo cp nginx.conf /etc/nginx/nginx.conf
 sudo cp cloudflare /etc/nginx/conf.d/cloudflare
 sudo service nginx restart
-sudo rm /etc/php/7.0/fpm/php.ini
-sudo cp php.ini /etc/php/7.0/fpm/php.ini
-sudo service php7.0-fpm restart
-sudo rm /etc/php/7.0/fpm/pool.d/www.conf
-sudo cp www.conf /etc/php/7.0/fpm/pool.d/www.conf
-sudo service php7.0-fpm restart
+sudo rm /etc/php/5.6/fpm/php.ini
+sudo cp php.ini /etc/php/5.6/fpm/php.ini
+sudo service php5.6-fpm restart
+sudo rm /etc/php/5.6/fpm/pool.d/www.conf
+sudo cp www.conf /etc/php/5.6/fpm/pool.d/www.conf
+sudo service php5.6-fpm restart
 sudo rm /etc/default/varnish
 sudo cp varnish /etc/default/varnish
 sudo rm /etc/varnish/default.vcl
@@ -32,7 +32,7 @@ touch /etc/vsftpd.allowed_users
 sudo service varnish restart
 sudo rm /var/www/html/index.nginx-debian.html
 sudo cp index.php /var/www/html/index.php
-echo "nginx with php7 installed on port 8080.."
+echo "nginx with php5.6 installed on port 8080.."
 sudo sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow 22
