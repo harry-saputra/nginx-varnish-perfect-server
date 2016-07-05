@@ -1,6 +1,4 @@
 # The perfect superfast webserver
-<b>UPDATE</b> - Now with PHP7 / mariadb /nginx / varnish for UBUNTU 16
-
 
 <b>Usage</b> :<br>
 Head to [digital ocean](https://m.do.co/c/6e83df0e17c6) or wherever, create a 5-10$ server (UBUNTU 16+), login as root, and run the following :
